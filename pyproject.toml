@@ -1,0 +1,26 @@
+[project]
+name = "difference_weighting"
+version = "0.1.0"
+requires-python = ">=3.9"
+description = "Implementation of the difference weighting block for longitudinal medical image segmentation"
+readme = "README.md"
+license = { file = "LICENSE" }
+authors = [
+    {name = "Yannick Kirchhoff", email = "yannick.kirchhoff@dkfz-heidelberg.de"},
+    {name = "Maximilian Rokuss", email = "maximilian.rokuss@dkfz-heidelberg.de"}
+]
+keywords = [
+    "longitudinal medical image segmentation",
+    "medical image segmentation",
+    "deep learning",
+    "difference weighting",
+    "nnU-Net"
+]
+dependencies = [
+    "torch>=2.1.2",
+    "dynamic-network-architectures>=0.3.1,<0.4"
+]
+
+[project.urls]
+homepage = "https://github.com/MIC-DKFZ/Longitudinal-Difference-Weighting"
+repository = "https://github.com/MIC-DKFZ/Longitudinal-Difference-Weighting"
