@@ -35,7 +35,7 @@ def get_longi_network_from_plans(arch_class_name, arch_backbone_class_name, arch
             architecture_kwargs[ri] = pydoc.locate(architecture_kwargs[ri])
 
     nw_class = recursive_find_python_class(join(difference_weighting.__path__[0], "architectures"), arch_class_name,
-                                           "nnunetv2.architectures")
+                                           "difference_weighting.architectures")
     if nw_class is None:
         raise ImportError('Network class could not be found, please check/correct your plans file')
 
