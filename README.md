@@ -6,6 +6,8 @@ This repository provides the implementation of the **Temporal Difference Weighti
 
 ### Read the paper: &nbsp; &nbsp;   [![arXiv](https://img.shields.io/badge/arXiv-2404.03010-B31B1B.svg)](https://arxiv.org/abs/2409.13416)
 
+### An implementation of the longitudinal segmentation framework *LongiSeg* used in our work can be found [here](https://github.com/MIC-DKFZ/LongiSeg).
+
 ## Introduction
 
 Longitudinal medical imaging plays a vital role in tracking disease progression, treatment response, and patient outcomes over time. However, traditional segmentation methods often process each time point independently, leading to inconsistencies and missed temporal patterns. To address this, we introduce **Temporal Difference Weighting (TDW)**, a novel approach that enhances segmentation by explicitly modeling temporal changes between consecutive imaging scans.
@@ -36,8 +38,6 @@ from difference_weighting.building_blocks.difference_weighting_block import Diff
 from difference_weighting.architectures.longi_unet import LongiUNet
 from difference_weighting.architectures.longi_unet_difference_weighting import LongiUNetDiffWeighting
 ```
-
-An implementation of the whole longitudinal segmentation framework will be made available after the next major nnUNet update.
 
 ## Citation
 
