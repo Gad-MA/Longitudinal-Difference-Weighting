@@ -4,9 +4,16 @@
 
 This repository provides the implementation of the **Temporal Difference Weighting (TDW) block**, introduced in the paper **"Longitudinal Segmentation of MS Lesions via Temporal Difference Weighting"**, accepted for the [*Longitudinal Disease Tracking and Modelling with Medical Images and Data*](https://ldtm-miccai.github.io/) workshop at MICCAI 2024.
 
-### Read the paper: &nbsp; &nbsp;   [![arXiv](https://img.shields.io/badge/arXiv-2404.03010-B31B1B.svg)](https://arxiv.org/abs/2409.13416)
+#### Read the paper: &nbsp; &nbsp;   [![arXiv](https://img.shields.io/badge/arXiv-2404.03010-B31B1B.svg)](https://arxiv.org/abs/2409.13416)
 
-### An implementation of the longitudinal segmentation framework *LongiSeg* used in our work can be found [here](https://github.com/MIC-DKFZ/LongiSeg).
+### This repository is part of LongiSeg!
+
+
+<a href="https://github.com/MIC-DKFZ/LongiSeg">
+    <img src="documentation/assets/LongiSeg.jpg" alt="LongiSeg" width="600"/>
+</a>
+
+#### [LongiSeg](https://github.com/MIC-DKFZ/LongiSeg) extends the powerful nnU-Net framework, specifically optimizing it for longitudinal medical image segmentation. By incorporating temporal information across multiple timepoints, LongiSeg enhances segmentation accuracy and consistency, making it a robust tool for analyzing medical imaging over time. The Difference Weighting Block inclduing the training pipeline is already included!
 
 ## Introduction
 
