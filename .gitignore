@@ -93,8 +93,6 @@ ENV/
 *.zip
 *.npz
 *.npy
-*.jpg
-*.jpeg
 .idea
 *.txt
 .idea/*
