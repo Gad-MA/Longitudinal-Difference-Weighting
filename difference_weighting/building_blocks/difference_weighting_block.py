@@ -14,11 +14,15 @@ class DifferenceWeightingBlock(nn.Module):
             setattr(self, f"norm_{norm}", get_matching_instancenorm(conv_op)(features_per_stage[norm], affine=True))
     
     def forward(self, skips_current, skips_prior):
+        attention_maps = []
+        
         for num_skip, (skip_current, skip_prior) in enumerate(zip(skips_current, skips_prior)):
             weighting = skip_current - skip_prior
 
             norm = getattr(self, f"norm_{num_skip}")
             weighting = norm(weighting)
 
+            attention.maps.append(weighting)
+            
             skips_current[num_skip] = skip_current * weighting + skip_current
-        return skips_current
+        return skips_current, attention_maps
