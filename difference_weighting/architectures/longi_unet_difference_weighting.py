@@ -36,14 +36,15 @@ class LongiUNetDiffWeighting(nn.Module):
         self.skip_diff_weighting = DifferenceWeightingBlock(architecture_kwargs['features_per_stage'], architecture_kwargs['conv_op'])
 
     def forward(self, d_c, d_p=None):
-        # allow for concatenation at different points in the code
-        if d_p is None:
-            d_c, d_p = torch.tensor_split(d_c, 2, dim=1)
-        skips_current = self.backbone.encoder(d_c)
-        skips_prior = self.backbone.encoder(d_p)
-        skips = self.skip_diff_weighting(skips_current, skips_prior)
-        x = self.backbone.decoder(skips)
-        return x
+            # allow for concatenation at different points in the code
+            if d_p is None:
+                d_c, d_p = torch.tensor_split(d_c, 2, dim=1)
+            skips_current = self.backbone.encoder(d_c)
+            skips_prior = self.backbone.encoder(d_p)
+            # CHANGED: Unpack the tuple returned by our modified block
+            skips, attention_maps = self.skip_diff_weighting(skips_current, skips_prior)
+            x = self.backbone.decoder(skips)
+            return x, attention_maps
     
     def __getattr__(self, name):
         try:
